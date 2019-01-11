@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>log-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	  <form [formGroup]="login"  (ngSubmit)="onSubmit()">
+			<ion-item>
+				<ion-label>Username</ion-label>
+		  		<ion-input required type="text" placeholder="here." formControlName="username" name="username"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>Password</ion-label>
+		  		<ion-input required type="password" placeholder="here." formControlName="password" name="password"></ion-input>
+			</ion-item>
+			<ion-grid>
+				<ion-row>
+					<ion-col offset="3" size="6">
+				  		<ion-button expand="full" color="success" type="submit" [disabled]="!login.valid">
+				  		  Log-In
+				  		</ion-button>
+					</ion-col>
+				</ion-row>	
+			</ion-grid>
+			<span *ngIf="isValid">Unvalid cradentials, Please try again</span>
+	</form>
+</ion-content>

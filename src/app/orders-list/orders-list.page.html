@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+    <ion-searchbar (ionInput)="onSearchOrders($event)"></ion-searchbar>  
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-card *ngFor="let order of orders | search:searchVal">
+        <app-order-item [order]="order" (toOrderId)="getOrderDetails($event)"></app-order-item>
+      </ion-card>
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

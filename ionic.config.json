@@ -1,6 +1,8 @@
 {
   "name": "orders-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "b0995681"
 }

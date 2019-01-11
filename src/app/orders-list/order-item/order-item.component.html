@@ -1,0 +1,12 @@
+<ion-card-header>
+  <h4>Order ID: #{{order.order_id}}</h4>
+</ion-card-header>
+<ion-card-content>
+  <p>Name: Gal Peled.</p>
+  <p>costumer_id: #{{order.costumer_id}}</p>
+  <p>Address: {{order.address}}</p>
+  <ion-button (click)="onGetDetails(order.order_id)">
+    <ion-icon name="planet" item-start></ion-icon>
+    details
+</ion-button>
+</ion-card-content>
