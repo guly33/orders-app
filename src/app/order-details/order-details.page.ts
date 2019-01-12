@@ -11,10 +11,11 @@ export class OrderDetailsPage implements OnInit {
   currentOrder: Order;
   products: Array<Product>;
 
-  constructor( private ordersService: OrdersService) { 
+  constructor( private ordersService: OrdersService) {
+  	
   	this.currentOrder = this.ordersService.toDisplay;
-  	console.log(this.currentOrder.products);
   	this.products = this.currentOrder.products;
+
   }
 
   ngOnInit() {

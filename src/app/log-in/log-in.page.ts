@@ -12,7 +12,8 @@ import { AuthService } from '../_services/auth.service';
 export class LogInPage implements OnInit {
   
   private login: FormGroup;
-  isValid: Boolean;
+  public isValid: Boolean;
+
   constructor( private auth: AuthService, private router: Router ) {
 
    }
@@ -29,8 +30,11 @@ export class LogInPage implements OnInit {
   		username: this.login.value.username,
   		password: this.login.value.password,
   	};
-	this.isValid = !this.auth.loging(toValidate);
-	this.router.navigate(['/home']);
+	  
+    this.isValid = !this.auth.loging(toValidate);
+    this.login.value.username = '';
+	  this.login.value.password = '';
+    this.router.navigate(['/home']);
   	
   }
 

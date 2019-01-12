@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,25 +10,25 @@ import { Subscription } from 'rxjs';
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
 
-    public appPages = [
-      {
-        title: 'Home',
-        url: '/home',
-        icon: 'home'
-      },
-      {
-        title: 'Orders List',
-        url: '/orders-list',
-        icon: 'list'
-      },
-    ];
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/home',
+      icon: 'home'
+    },
+    {
+      title: 'Orders List',
+      url: '/orders-list',
+      icon: 'list'
+    },
+  ];
 
-    displaySideBar: Boolean = false;
-    loggedObserve: Subscription;
-
+  public displaySideBar: Boolean = false;
+  public loggedObserve: Subscription;
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -52,6 +52,15 @@ export class AppComponent implements OnInit {
                 this.displaySideBar = logged;
               }
             );
+  }
+
+  onLogout() {
+    this.auth.logout();
+    console.log('logout');
+  }
+
+  ngOnDestroy() {
+    this.loggedObserve.unsubscribe();
   }
 
 }

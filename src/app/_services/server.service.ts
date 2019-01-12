@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,7 +24,9 @@ export class ServerService {
   };
 
   constructor( private http: HttpClient ) {
-
+        this.getOrders().subscribe(data => {
+            console.log(data);
+        });
    }
 
 
