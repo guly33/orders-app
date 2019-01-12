@@ -6,11 +6,15 @@
     <ion-title>
       <ion-grid>
         <ion-row>
-          <ion-col size="8">
+          <ion-col size="12">
               <ion-searchbar (ionInput)="onSearchOrders($event)" placeholder="Search by ID" #searchInput></ion-searchbar> 
           </ion-col>
-          <ion-col size="4">
-             <ion-button (click)="onScanQr()"><ion-icon name="qr-scanner"></ion-icon> QR</ion-button>
+        </ion-row>
+        <ion-row>
+          <ion-col size="5" offset="7">
+             <ion-button (click)="onScanQr()">
+              by QR: <ion-icon name="qr-scanner"></ion-icon>
+            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>

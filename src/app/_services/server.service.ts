@@ -12,12 +12,12 @@ export class ServerService {
 
   testUser = {
   	cradentials: {
-  		username: 'gal33',
-  		password: 'password'
+  		username: 'admin',
+  		password: 'admin'
   	},
   	info: {
   		id: '123abc',
-  		name: 'gal peled',
+  		name: 'israel israeli',
   		mail: 'gal@peled.com',
   		address: 'over there 4, Haifa, Israel'
   	}

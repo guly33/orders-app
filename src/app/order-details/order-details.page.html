@@ -9,7 +9,7 @@
 					</ion-button>    				
     			</ion-col>
     			<ion-col size="9">
-    				<span>{{currentOrder.email}}</span>
+    				<span>Order Info</span>
     			</ion-col>
     		</ion-row>
     	</ion-grid>
@@ -19,23 +19,31 @@
 
 <ion-content padding>
 	<ion-list>
+	  <ion-item>
+	  	<p>
+	  		ID: {{currentOrder.order_id}}		
+	  	</p>
+	  </ion-item>
+	  <ion-item>
+	  	<h3>Products:</h3>
+	  </ion-item>
 	  <ion-item *ngFor="let product of products">
 	  	<ion-grid>  	
 		    <ion-row>
 		    	<ion-col size="2">
-		    		<h3>#{{product.id}}</h3>
+		    		<h5>#{{product.id}}</h5>
 		    	</ion-col>
 		    	<ion-col size="7" offset="1">
-				    <h4>{{product.name}}</h4>		
+				    <h5>{{product.name}}</h5>		
 		    	</ion-col>
 		    </ion-row>
 		    <ion-row>
-		    	<ion-col size="10" offset="1">
+		    	<ion-col size="10" offset="2">
 		    		<p>{{product.description}}</p>
 		    	</ion-col>
 		    </ion-row>
 		    <ion-row>
-		    	<ion-col size="5" offset="6">
+		    	<ion-col size="10">
 				  	<h3>price: {{product.cost}}</h3>
 		    	</ion-col>
 		    </ion-row>	    

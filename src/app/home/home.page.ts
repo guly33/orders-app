@@ -8,7 +8,7 @@ import { ServerService } from '../_services/server.service';
 })
 export class HomePage implements OnInit {
 
-	currentUser: Object;
+	currentUser: any;
 
 	constructor( private server: ServerService ) {}
 

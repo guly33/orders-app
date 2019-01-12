@@ -11,7 +11,7 @@ import { AuthService } from '../_services/auth.service';
 })
 export class LogInPage implements OnInit {
   
-  private login: FormGroup;
+  public login: FormGroup;
   public isValid: Boolean;
 
   constructor( private auth: AuthService, private router: Router ) {

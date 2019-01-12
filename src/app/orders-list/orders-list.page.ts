@@ -38,8 +38,14 @@ export class OrdersListPage implements OnDestroy {
 
   onScanQr() {
     this.scanner.scanCode().then((data: BarcodeScanResult) => {
-      this.searchVal = data.text;
-      this.searchInput.el.value = data.text;
+      if (!data.cancelled) {
+        // code...
+        this.searchVal = data.text;
+        this.searchInput.el.value = data.text;
+      } else {
+        alert('No QR detected!');
+        this.router.navigate(['/orders-list']);
+      }
     }).catch((err) => {
       console.log('err', err);
     });
