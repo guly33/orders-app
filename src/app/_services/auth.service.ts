@@ -30,7 +30,7 @@ export class AuthService {
 	loging(currentUser): Boolean {
 		const cradentials = this.server.testUser.cradentials;
 		
-		if (currentUser.username === cradentials.username && currentUser.password === cradentials.password) {
+		if (currentUser.username.toLowerCase()  === cradentials.username.toLowerCase() && currentUser.password === cradentials.password) {
 			// code...
 			this.isLogged = true;
 			this.loggedObservable.next(this.isLogged);
